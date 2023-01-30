@@ -23,3 +23,7 @@ body {
   min-height: 100vh;
 }
 
+@font-face {
+  font-family: 'yourFont';
+  src: local('yourFont'), url(fonts/yourFont.ttf) format('truetype');
+}
