@@ -12,6 +12,8 @@ const ALCHEMY_API_KEY = "yourPrivateKey";
 
 const GOERLI_PRIVATE_KEY = "yourPrivateKey";
 
+const ETHERSCAN_API_KEY = "yourApiKey";
+
 
 const config: HardhatUserConfig = {
   solidity: "0.8.17",
@@ -26,6 +28,9 @@ const config: HardhatUserConfig = {
     localhost: {
       url: "http://127.0.0.1:8545"
     },
+  },
+  etherscan: {
+    apiKey: ETHERSCAN_API_KEY,
   },
 };
 
