@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import './App.css'
 import {TransactionsProvider} from "./context/TransactionContext";
 import {Route, Routes} from "react-router-dom";
