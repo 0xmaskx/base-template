@@ -16,7 +16,7 @@ async function main() {
   console.log(`Lock with 1 ETH and unlock timestamp ${unlockTime} deployed to ${lock.address}`);
 
 
-  //Updater web3constants.tsx file with new parameters
+  //Update web3constants.tsx file with new parameters
 
   const fs = require('fs');
 

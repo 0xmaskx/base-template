@@ -26,7 +26,7 @@ async function main() {
     console.log(err.message)
   }
 
-  //Updater web3constants.tsx file with new parameters
+  //Update web3constants.tsx file with new parameters
 
   const fs = require('fs');
 
