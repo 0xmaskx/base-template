@@ -2,18 +2,16 @@ import { ethers } from "hardhat";
 import fs from "fs";
 
 async function main() {
-  const currentTimestampInSeconds = Math.round(Date.now() / 1000);
-  const ONE_YEAR_IN_SECS = 365 * 24 * 60 * 60;
-  const unlockTime = currentTimestampInSeconds + ONE_YEAR_IN_SECS;
+  //Token Contract
 
-  const lockedAmount = ethers.utils.parseEther("1");
+  console.log("Deployment of yourToken")
 
-  const Lock = await ethers.getContractFactory("Lock");
-  const lock = await Lock.deploy(unlockTime, { value: lockedAmount });
+  const YourToken = await ethers.getContractFactory("YourToken")
+  const yourToken = await YourToken.deploy()
 
-  await lock.deployed();
+  await yourToken.deployed()
 
-  console.log(`Lock with 1 ETH and unlock timestamp ${unlockTime} deployed to ${lock.address}`);
+  console.log(`Contract deployed to ${yourToken.address}`)
 
 
   //Update web3constants.tsx file with new parameters
@@ -22,7 +20,7 @@ async function main() {
 
   const filePath = '../front/src/utils/web3constants.tsx';
   const fileContent = `
-export const lockAddress: string = "${lock.address}"
+export const yourTokenAddress: string = "${yourToken.address}"
 `;
 
   fs.writeFileSync(filePath, fileContent, {flag: 'w'});
